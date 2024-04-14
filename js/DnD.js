@@ -1,1 +1,1 @@
-let form = document. 
+let form = document.querySelector("form")
