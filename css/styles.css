@@ -1,6 +1,16 @@
 :root {
   color-scheme: light dark;
-  color: light-dark(#333b3c, #efefec);
-  background-color: light-dark(#efedea, #223a2c);
+}
+  @media (prefers-color-scheme: light) {
+  .body {
+    color: black;
+    background-color: white;
+  }
+  }
 
+@media (prefers-color-scheme: dark) {
+  .body {
+    color: white;
+    background-color: black;
+  }
 }
