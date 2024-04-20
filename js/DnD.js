@@ -1,1 +1,3 @@
-let form = document.querySelector("form")
+let cookies = document.cookies
+
+let form = document.querySelector("#DnD")
