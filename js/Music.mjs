@@ -1,4 +1,3 @@
-/*let topTracks = await getTopTracks();
 
 app.get('/callback', function(req, res) {
 
@@ -48,5 +47,3 @@ async function getTopTracks(){
     'v1/me/', 'GET'
   )).items;
 }
-*/
-document.cookie = Date.now.toString()
