@@ -45,15 +45,15 @@ const base64encode = (input) => {
     .replace(/\//g, '_');
 }
 
-const hashed = await sha256(codeVerifier)
+const hashed = await sha256(codeVerifier);
 const codeChallenge = base64encode(hashed);
 
 
 const clientId = 'YOUR_CLIENT_ID';
-const redirectUri = 'dabbie50.github.io/redirect.html';
+const redirectUri = 'dabbie50.github.io/redirect.html?from=spotify';
 
 const scope = 'user-read-private user-read-email';
-const authUrl = new URL("https://accounts.spotify.com/authorize")
+const authUrl = new URL("https://accounts.spotify.com/authorize");
 
 // generated in the previous step
 window.localStorage.setItem('code_verifier', codeVerifier);
