@@ -32,7 +32,7 @@ const generateRandomString = (length) => {
 
 const codeVerifier  = generateRandomString(64);
 
-const sha256 = async (plain) => {
+const sha256 = function(plain) {
   const encoder = new TextEncoder()
   const data = encoder.encode(plain)
   return window.crypto.subtle.digest('SHA-256', data)
@@ -45,11 +45,11 @@ const base64encode = (input) => {
     .replace(/\//g, '_');
 }
 
-const hashed = await sha256(codeVerifier);
+const hashed = sha256(codeVerifier);
 const codeChallenge = base64encode(hashed);
 
 
-const clientId = 'YOUR_CLIENT_ID';
+const clientId = 'd42fa8b098a14a769be65e9d110f5646';
 const redirectUri = 'dabbie50.github.io/redirect.html';
 
 const scope = 'user-read-private user-read-email';
