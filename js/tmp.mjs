@@ -29,7 +29,7 @@ const codeChallenge = base64encode(hashed);
 const clientId = 'd42fa8b098a14a769be65e9d110f5646';
 const redirectUri = 'dabbie50.github.io/redirect.html';
 
-const scope = 'playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private';
+const scope = 'playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private user-read-private user-read-email';
 const authUrl = new URL("https://accounts.spotify.com/authorize")
 
 // generated in the previous step

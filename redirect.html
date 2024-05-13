@@ -1,12 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
-<link href="css/styles.css" type="text/css"></link>
-<script src="js/tmp.mjs"></script>
-<title>redirect | Nbstallings</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+  <title>Redirect Client</title>
 </head>
 <body>
-<h1>Redirecting...</h1>
+  <h1>Redirecting...</h1>
+
+  <script>
+    // Function to parse access token from URL
+    function parseAccessToken() {
+      const params = new URLSearchParams(window.location.hash.substring(1));
+      return params.get('access_token');
+    }
+
+    // Function to save access token to local storage
+    function saveAccessTokenToLocalStorage(token) {
+      localStorage.setItem('spotifyAccessToken', token);
+    }
+
+    // Function to redirect user to main application
+    function redirectToMainApp() {
+      window.location = 'https://dabbie50.github.io/'; // Your main application URL
+    }
+
+    // Main function to handle the redirect
+    function handleRedirect() {
+      const accessToken = parseAccessToken();
+      if (accessToken) {
+        saveAccessTokenToLocalStorage(accessToken);
+        redirectToMainApp();
+      } else {
+        console.error('Access token not found in URL.');
+        // Handle error or redirect to login page
+      }
+    }
+
+    // Call the main function when the page loads
+    window.onload = handleRedirect;
+  </script>
 </body>
 </html>

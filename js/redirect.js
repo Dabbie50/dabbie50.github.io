@@ -5,7 +5,7 @@ curl -X POST "https://accounts.spotify.com/api/token" \
 */
 
 const urlParams = new URLSearchParams(window.location.search);
-let code = urlParams.get('code');
+let code = urlParams.get('access_token');
 
 const getToken = async code => {
 
