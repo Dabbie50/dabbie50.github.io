@@ -3,7 +3,9 @@ curl -X POST "https://accounts.spotify.com/api/token" \
      -H "Content-Type: application/x-www-form-urlencoded" \
      -d "grant_type=client_credentials&client_id=your-client-id&client_secret=your-client-secret"
 */
+let service = urlParams.get('from');
 
+if service == "spotify" {
 const urlParams = new URLSearchParams(window.location.search);
 let code = urlParams.get('access_token');
 
@@ -30,4 +32,5 @@ const getToken = async code => {
   const response =await body.json();
 
   localStorage.setItem('access_token', response.access_token);
+}
 }

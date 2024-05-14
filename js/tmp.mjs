@@ -1,5 +1,3 @@
-window.s
-
 
 const generateRandomString = (length) => {
   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -22,6 +20,7 @@ const base64encode = (input) => {
     .replace(/\//g, '_');
 }
 
+
 const hashed = sha256(codeVerifier);
 const codeChallenge = base64encode(hashed);
 
@@ -31,6 +30,7 @@ const redirectUri = 'dabbie50.github.io/redirect.html';
 
 const scope = 'playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private user-read-private user-read-email';
 const authUrl = new URL("https://accounts.spotify.com/authorize")
+
 
 // generated in the previous step
 window.localStorage.setItem('code_verifier', codeVerifier);
