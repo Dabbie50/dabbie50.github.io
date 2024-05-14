@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+    <title>Music Sync Service</title>
+</head>
+<body>
+  <button id="SpotifyloginButton">Log in with Spotify</button>
+
+  <button id="AmazonloginButton">Log in with Amazon</button>
+
+  
+  <script>
+    // Function to handle the login process
+    function loginWithSpotify() {
+      // Spotify's OAuth parameters
+      const clientId = 'd42fa8b098a14a769be65e9d110f5646';
+      const redirectUri = 'https://dabbie50.github.io/redirect.html'; // Your redirect URI
+
+      const scope = "playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private user-read-private user-read-email"
+      
+      // Redirect user to Spotify's authorization page
+      window.location = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=${encodeURIComponent(scope)}&state=123`;
+    }
+
+    // Event listener for the login button
+    document.getElementById('SpotifyloginButton').addEventListener('click', loginWithSpotify);
+  </script>
+  <script>
+    // Function to handle the login process
+    function loginWithAmazon() {
+      // Amazon OAuth parameters
+      const clientId = 'YOUR_AMAZON_CLIENT_ID';
+      const redirectUri = 'http://localhost:3000/callback'; // Your redirect URI
+
+      // Redirect user to Amazon's authorization page
+      window.location = `https://www.amazon.com/ap/oa?client_id=${clientId}&scope=profile&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}`;
+    }
+
+    // Event listener for the login button
+    document.getElementById('AmazonloginButton').addEventListener('click', loginWithAmazon);
+  </script>
+</body>
+</html>
