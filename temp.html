@@ -17,7 +17,7 @@
     function loginWithSpotify() {
       // Spotify's OAuth parameters
       const clientId = 'd42fa8b098a14a769be65e9d110f5646';
-      const redirectUri = 'https://dabbie50.github.io/redirect.html'; // Your redirect URI
+      const redirectUri = 'https://dabbie50.github.io/Spotifyredirect.html'; // Your redirect URI
 
       const scope = "playlist-read-private playlist-read-collaborative playlist-modify-public playlist-modify-private user-read-private user-read-email"
       
@@ -32,8 +32,8 @@
     // Function to handle the login process
     function loginWithAmazon() {
       // Amazon OAuth parameters
-      const clientId = 'YOUR_AMAZON_CLIENT_ID';
-      const redirectUri = 'http://localhost:3000/callback'; // Your redirect URI
+      const clientId = 'amzn1.application-oa2-client.05ba2bb63bae45439503ae5628bb3f26';
+      const redirectUri = 'https://dabbie50.github.io/Amazonredirect.html'; // Your redirect URI
 
       // Redirect user to Amazon's authorization page
       window.location = `https://www.amazon.com/ap/oa?client_id=${clientId}&scope=profile&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}`;
