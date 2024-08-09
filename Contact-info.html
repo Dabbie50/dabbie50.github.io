@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Contact Info</title>
+</head>
+<body>
+    <button onclick="downloadVCard()">Save my Contact info here...</button>
+
+    <script>
+        function downloadVCard() {
+            // Replace 'path/to/your/vcard.vcf' with the actual path to your vCard file
+            const vCardUrl = 'Nathan Stallings.vcf';
+
+            // Create an anchor element
+            const link = document.createElement('a');
+            link.href = vCardUrl;
+            link.download = 'Nathan-Stallings-Contact-info.vcf'; // Set the desired filename
+
+            // Trigger the download
+            link.click();
+        }
+    </script>
+</body>
+</html>
